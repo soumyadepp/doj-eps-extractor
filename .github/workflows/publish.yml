@@ -9,10 +9,14 @@ permissions:
   contents: read
 
 jobs:
+  test:
+    uses: ./.github/workflows/tests.yml
+
   deploy:
+    needs: test
     runs-on: ubuntu-latest
     environment:
-      name: pypi
+      name: release
       url: https://pypi.org/p/doj-multimedia-search
     permissions:
       id-token: write
