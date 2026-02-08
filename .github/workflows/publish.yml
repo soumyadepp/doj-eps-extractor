@@ -19,7 +19,7 @@ jobs:
     needs: test
     runs-on: ubuntu-latest
     environment:
-      name: release
+      name: pypi
       url: https://pypi.org/p/doj-multimedia-search
     permissions:
       id-token: write
