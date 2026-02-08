@@ -150,7 +150,7 @@ epstein --help
 epstein --search "query"
 
 # Search and save to files
-epstein --search "query" --limit 100
+epstein --search "query" --limit 100 --output-path "reports/"
 
 # Preview without saving
 epstein --search "query" --no-save
@@ -175,7 +175,7 @@ client = DOJMultimediaSearchClient()
 documents = client.search_all(query="query", max_results=100)
 
 # Save results
-client.save_results(documents, prefix="my_results")
+client.save_results(documents, prefix="my_results", output_path="reports/")
 
 # Get single page
 docs, has_next = client.search(query="query", page=0)
